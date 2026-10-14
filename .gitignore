@@ -1,0 +1,46 @@
+# ===== Keil MDK-ARM 编译输出目录 =====
+Output/
+Listings/
+DebugConfig/
+
+# ===== 编译中间文件与产物 =====
+*.o
+*.d
+*.crf
+*.iex
+*.axf
+*.hex
+*.bin
+*.lnp
+*.map
+*.lst
+*.dep
+*.sct
+*.htm
+*.build_log.htm
+*.bak
+*.__i
+
+# ===== Keil 本机用户配置（随电脑/个人布局变化） =====
+*.uvguix.*
+JLinkLog.txt
+JLinkSettings.ini
+
+# ===== VSCode / Keil Assistant 本机配置（含本机绝对路径）、日志与锁文件 =====
+**/.vscode/
+*.log
+*.lock
+
+# ===== 敏感信息：密钥绝不能提交 =====
+id_rsa*
+id_ed25519*
+*.pem
+*.key
+
+# ===== Node.js（防御性规则，本项目不应出现） =====
+node_modules/
+npm-debug.log*
+
+# ===== Windows 系统垃圾文件 =====
+Thumbs.db
+Desktop.ini
