@@ -151,7 +151,7 @@ uint8_t Dht11_Init(void)
     DHT11_DQ_GPIO_CLK_ENABLE();     /* 开启DQ引脚时钟 */
 
     gpio_init_struct.Pin = DHT11_DQ_GPIO_PIN;
-    gpio_init_struct.Mode = GPIO_MODE_OUTPUT_PP;            //推挽输出能输出高和低
+    gpio_init_struct.Mode = GPIO_MODE_OUTPUT_OD;            //选择开漏输出，因为开漏输出释放总线可以让从机接取
     gpio_init_struct.Pull = GPIO_PULLUP;                    /* 上拉 */
     gpio_init_struct.Speed = GPIO_SPEED_FREQ_HIGH;          /* 高速 */
     HAL_GPIO_Init(DHT11_DQ_GPIO_PORT, &gpio_init_struct);   /* 初始化DHT11_DQ引脚 */
