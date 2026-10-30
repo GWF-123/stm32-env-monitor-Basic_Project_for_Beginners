@@ -120,7 +120,35 @@ READ_ADC
 4. 发送 `READ_ADC`、`PWM:500`、`PAGE:2` 等命令进行交互；
 5. 按 KEY0 / KEY1 切换 OLED 页面，发送 `SAVE` 保存当前参数后断电重启验证恢复效果。
 
-## 八、版本迭代记录
+## 八、示波器实测波形
+
+以下为实际使用示波器对本项目外设总线与输出信号的抓取记录，图中中文标注为测量时对时序的分析说明（图片已压缩，[docs/images](./docs/images) 下为仓库版本）。
+
+### I2C 总线（软件 I2C 驱动 OLED / MAX30102）
+
+| 说明 | 波形 |
+| --- | --- |
+| OLED：起始信号、从机地址 0111100 匹配、从机应答与停止信号 | ![](./docs/images/IIC相关/OLED/OLED波形.jpg) |
+| MAX30102：起始信号与写地址 | ![](./docs/images/IIC相关/MAX30102/MAX30102起始写地址.jpg) |
+| MAX30102：写寄存器 PART 地址 | ![](./docs/images/IIC相关/MAX30102/写寄存器PART地址.jpg) |
+| MAX30102：写地址后读 PART ID | ![](./docs/images/IIC相关/MAX30102/MAX30102写地址读PARTID.jpg) |
+| MAX30102：读到器件 ID | ![](./docs/images/IIC相关/MAX30102/MAX30102读到ID.jpg) |
+
+### PWM 输出
+
+| 说明 | 波形 |
+| --- | --- |
+| 低电平有效实测 | ![](./docs/images/PWM相关/低电平有效.jpg) |
+| 高电平有效实测 | ![](./docs/images/PWM相关/高电平有效.jpg) |
+
+### 串口（USART1 115200）
+
+| 说明 | 波形 |
+| --- | --- |
+| 发送字符 'A'：标注起始位 / 数据位（LSB 在前）/ 停止位 | ![](./docs/images/串口相关/字符A测试波形.jpg) |
+| 多字符连续发送波形 | ![](./docs/images/串口相关/多个字符测试的波形.jpg) |
+
+## 九、版本迭代记录
 
 | 版本 | 更新内容 |
 | --- | --- |
@@ -133,7 +161,7 @@ READ_ADC
 
 历次版本代码快照见 [`archive/`](./archive) 目录。
 
-## 九、版权与出处声明
+## 十、版权与出处声明
 
 1. `Drivers/CMSIS` 与 `Drivers/STM32F1xx_HAL_Driver` 目录下的代码为 **STMicroelectronics** 官方提供的 CMSIS 与 STM32F1 HAL 库，版权归 STMicroelectronics 所有，许可条款以各目录内自带的 LICENSE.txt 为准。
 2. `Drivers/SYSTEM`（delay / sys / usart）基于**正点原子** STM32F103 教学例程修改，版权归正点原子所有，本项目仅用于个人学习交流。
