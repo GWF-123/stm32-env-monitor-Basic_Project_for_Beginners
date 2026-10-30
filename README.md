@@ -27,7 +27,7 @@
 | 开发板 | 正点原子 STM32F103 开发板 |
 | 显示屏 | 0.96 寸 128×64 OLED（SSD1306 兼容，4 针 I2C，GPIO 软件模拟 I2C 驱动） |
 | 传感器 | DHT11 温湿度传感器、光敏电阻、电位器 |
-| 外部存储 | W25Q64 SPI Flash；驱动兼容 W25Q128 等型号，运行时读取 JEDEC ID 自动识别 |
+| 外部存储 | W25Q128 SPI Flash；驱动兼容 W25Q64 等型号，运行时读取 JEDEC ID 自动识别 |
 | 指示与输入 | LED0（PWM 调光）、LED1（阈值报警）；3 个独立按键 |
 
 ## 三、引脚连接
@@ -39,7 +39,7 @@
 | TIM3_CH2 | PB5 | PWM 输出，驱动 LED0 |
 | LED1 | PE5 | 光照越限报警指示 |
 | 按键 | KEY0=PE4，KEY1=PE3，KEY_UP=PA0 | KEY0 下一页，KEY1 上一页 |
-| SPI2 | PB12(CS) / PB13(SCK) / PB14(MISO) / PB15(MOSI) | 外接 W25Q64（CS 由软件控制） |
+| SPI2 | PB12(CS) / PB13(SCK) / PB14(MISO) / PB15(MOSI) | 外接 W25Q128（CS 由软件控制） |
 | 软件 I2C | PB6(SCL) / PB7(SDA) | 开漏输出，连接 OLED |
 | DHT11 | PG11 | 单总线温湿度传感器 |
 
