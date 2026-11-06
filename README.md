@@ -19,10 +19,12 @@
 
 - 📄 项目简介（Word 版）：[STM32智能环境监测终端-项目简介.docx](./docs/STM32%E6%99%BA%E8%83%BD%E7%8E%AF%E5%A2%83%E7%9B%91%E6%B5%8B%E7%BB%88%E7%AB%AF-%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B.docx)
 - 📺 演示视频：[docs/video/演示视频.mp4](./docs/video/%E6%BC%94%E7%A4%BA%E8%A7%86%E9%A2%91.mp4)
-- 📷 示波器实测波形照片（共 9 张，不直接内嵌，点开查看）：
+- 📷 示波器实测波形照片（共 25 张，不直接内嵌，点开查看）：
   - [I2C 总线（OLED / MAX30102）](./BareMetal/docs/images/IIC%E7%9B%B8%E5%85%B3)
   - [PWM 输出](./BareMetal/docs/images/PWM%E7%9B%B8%E5%85%B3)
   - [串口 USART1](./BareMetal/docs/images/%E4%B8%B2%E5%8F%A3%E7%9B%B8%E5%85%B3)
+  - [DHT11 单总线（起始 / 响应 / 40bit 数据与校验）](./BareMetal/docs/images/DHT11)
+  - [SPI Flash（W25Q128 读 / 写 / 擦除指令）](./BareMetal/docs/images/SPI)
 
 ## 快速开始
 
